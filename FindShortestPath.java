@@ -85,45 +85,6 @@ public class FindShortestPath {
 //            else {
 //                StdOut.println("input not contain '" + source + "'");
 //            }
-//        }
-		
-		
+//        }	
 	}
-	
-	
-	
-//	I don't think this code is ever used, but I spent a lot of time writing it and as such I don't yet have the heart to delete it. 
-	/**Reads in a list of Monsters from the filepath attribute set by the Ctor,
-	 * and creates a List of PfMonster from the csv file. 
-	 * 
-	 * Notably, the UML diagram uses an array of monsters rather than a List
-	 * of monsters. This code is similar to another project I did, where I
-	 * ultimately regretted using an array instead of a list/arraylist. 
-	 * This class CAN return an array if that's what we want, but it doesn't
-	 * do that currently.
-	 * 
-	 * @param filepath String representation of relative path to monsters.csv location.
-	 * @return List of monsters.
-	 */
-	private List<PfMonster> getListOfMonsters() {
-		
-		List<PfMonster> monstersList = new ArrayList<>();
-		
-		try (BufferedReader br = new BufferedReader(new FileReader(filepath))) { //make a buffered reader to read in the contents of the csv file.
-			String line;
-			while ((line = br.readLine()) != null) {
-				String[] tokens = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
-				monstersList.add(new PfMonster(tokens[0], tokens[1], tokens[2])); //TODO change tokens[1 + 2] to take in arrays of strings.  
-			}
-		} catch (FileNotFoundException e) {
-			System.out.println("The file was not found.");
-			e.printStackTrace();
-		} catch (IOException e) {
-			System.out.println("A problem occurred reading in the list of Monsters.");
-			e.printStackTrace();
-		}
-		return monstersList;
-	}
-	
-//	bfs
 }
