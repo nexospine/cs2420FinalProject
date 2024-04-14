@@ -30,8 +30,6 @@ public class GUI {
 			else
 				System.out.println("Please enter a valid name");
 		}
-		
-		monsterSearch.range("");
 	}
 	
 	/**
